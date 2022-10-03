@@ -24,7 +24,13 @@ signUpBtn.addEventListener('click', signUpHandler);
 
 function signUpHandler() {
   let username = signupUsername.value;
+  if(username === ""){
+    return;
+  }
   let password = signupPassword.value;
+  if(password === ""){
+    return;
+  }
   if(password != signupConfirmPassword.value){
     alert("PASSWORDS NOT MATCH");
     return;
@@ -45,10 +51,17 @@ signInBtn.addEventListener('click', signInHandler);
 
 function signInHandler() {
   let username = loginUsername.value;
-  let password = loginUsername.value;
+  if(username === ""){
+    return;
+  };
+  let password = loginPassword.value;
+  if(password === ""){
+    return;
+  }
 
   for(let i = 0; i < logins.length; i++){
     if(username === logins[i].username && password === logins[i].password){
+      console.log(logins[i]);
       alert("LOGGED IN");
       return;
     }
