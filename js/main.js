@@ -25,10 +25,12 @@ signUpBtn.addEventListener('click', signUpHandler);
 function signUpHandler() {
   let username = signupUsername.value;
   if(username === ""){
+    alert("ENTER USENAME");
     return;
   }
   let password = signupPassword.value;
   if(password === ""){
+    alert("ENTER PASSWORD");
     return;
   }
   if(password != signupConfirmPassword.value){
@@ -51,13 +53,12 @@ signInBtn.addEventListener('click', signInHandler);
 
 function signInHandler() {
   let username = loginUsername.value;
-  if(username === ""){
+  let password = loginPassword.value;
+  if(username === "" || password === ""){
+    alert("ENTER VALID USERNAME OR PASSWORD");
     return;
   };
-  let password = loginPassword.value;
-  if(password === ""){
-    return;
-  }
+
 
   for(let i = 0; i < logins.length; i++){
     if(username === logins[i].username && password === logins[i].password){
